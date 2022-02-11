@@ -25,8 +25,9 @@ prevBtn.addEventListener("click", () => {
   update();
 })
 
-// Function to update step circles status
+// Function to update step circles status & progress bar
 function update() {
+  // Circle status
   circles.forEach((circle, index) => {
     if (index < currentActive) {
       circle.classList.add("active");
@@ -35,4 +36,12 @@ function update() {
       circle.classList.remove("active");
     }
   })
+
+  // Progress bar status
+  // My solution:
+  progress.style.width = ( (100 / (circles.length - 1) ) * (currentActive - 1) ) + "%";
+  
+  // Course solution:
+  // const activeCircles = document.querySelectorAll(".active");
+  // progress.style.width = (activeCircles.length - 1) / (circles.length - 1) * 100 + "%";
 }
