@@ -9,19 +9,30 @@ let currentActive = 1;
 
 nextBtn.addEventListener("click", () => {
   currentActive++;
-
   if (currentActive > circles.length) {
     currentActive = circles.length;
   }
 
+  update();
 })
 
 prevBtn.addEventListener("click", () => {
   currentActive--;
-
   if (currentActive < 1) {
     currentActive = 1;
   }
 
+  update();
 })
 
+// Function to update step circles status
+function update() {
+  circles.forEach((circle, index) => {
+    if (index < currentActive) {
+      circle.classList.add("active");
+    }
+    else {
+      circle.classList.remove("active");
+    }
+  })
+}
