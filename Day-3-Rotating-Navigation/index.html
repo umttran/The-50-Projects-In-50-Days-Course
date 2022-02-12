@@ -1,22 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- When font awesome needed -->
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
-
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles.css">
-  
   <title>Rotating Navigation Project</title>
 </head>
+
 <body>
-  
+  <div class="container">
+    <!-- Navbar opening and closing buttons -->
+    <div class="circle-container">
+      <div class="circle">
+        <button id="close">
+          <i class="fas fa-times"></i>
+        </button>
+        <button id="open">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
 
+    <!-- Page Content -->
+    <div class="content">
+      <h1>My Dream</h1>
+      <small>Harley Davidson Iron 833</small>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, ipsam corrupti? Illo temporibus explicabo,
+        deserunt amet maxime earum cum? Adipisci, consectetur iusto atque saepe doloribus corrupti consequuntur eaque ad
+        nulla, asperiores ipsa perferendis provident minima rem soluta. Provident nesciunt, neque praesentium distinctio
+        eaque in? Rerum temporibus unde ratione, qui rem ipsa quod nesciunt labore repellat tempora omnis deleniti vero
+        laudantium. Corrupti, voluptas temporibus. Quisquam a incidunt maiores aliquam voluptate ipsum, eaque quis
+        laudantium animi, doloribus iure ipsa? Amet distinctio accusamus praesentium repudiandae a dolores sint, autem
+        id accusantium quidem aut ea, ad natus ipsa. Laboriosam, velit natus. Aliquam, deleniti laudantium.</p>
+      <h3>HD Iron 833</h3>
+      <img
+        src="https://images.unsplash.com/photo-1620665319197-82634847c806?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+        alt="hd-iron833">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut commodi explicabo rerum minima voluptatem. Debitis,
+        ipsum quod in sit officia dolorem consectetur sunt voluptates ut laudantium nulla saepe, fugit odio provident
+        temporibus molestiae fugiat! Placeat, sit eligendi. At porro cupiditate, aperiam incidunt illo aliquid, possimus
+        dignissimos amet enim ullam corrupti. Quae corrupti deserunt repudiandae voluptatibus amet? Voluptatibus nemo
+        quia illo asperiores delectus nobis, sit pariatur necessitatibus sint. Eligendi animi culpa, distinctio aut
+        perferendis temporibus perspiciatis.</p>
+    </div>
+  </div>
 
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li class="fs fs-home">Home</li>
+      <li class="fs fs-about">About</li>
+      <li class="fs fs-envelope">Contact</li>
+    </ul>
+  </nav>
 
   <script src="./script.js"></script>
 </body>
+
 </html>
