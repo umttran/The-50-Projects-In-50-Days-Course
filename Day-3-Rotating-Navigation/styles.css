@@ -22,7 +22,7 @@ body {
   padding: 50px;
 }
 
-/* When navbar is open */
+/* When navbar is open rotate content */
 .container.show-nav {
   transform: rotate(-20deg);
 }
@@ -40,6 +40,11 @@ body {
   border-radius: 50%;
   position: relative;
   transition: transform 0.5s linear;
+}
+
+/* When navbar is open set menu icons position */
+.container.show-nav .circle {
+  transform: rotate(-70deg);
 }
 
 .circle button {
@@ -70,7 +75,7 @@ body {
 
 .container.show-nav + nav li {
   transform: translateX(0);
-  transition-delay: 0.1s;
+  transition-delay: 0.09s;
 }
 
 /* To see nav icons on bottom-left when content rotated   */
