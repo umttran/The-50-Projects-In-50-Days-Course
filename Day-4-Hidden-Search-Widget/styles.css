@@ -28,7 +28,7 @@ body {
   padding: 15px;
   height: 64px;
   width: 64px;
-  transition: width 0.3s ease;
+  transition: width 0.4s ease;
 }
 
 .btn {
@@ -42,7 +42,7 @@ body {
   left: 0;
   height: 64px;
   width: 64px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
 }
 
 .btn:focus, .input:focus {
@@ -50,9 +50,10 @@ body {
 }
 
 .search.active .input {
-  width: 264px;
+  width: 520px;
+  padding: 15px 64px 15px 15px;
 }
 
 .search.active .btn {
-  transform: translateX(200px);
+  transform: translateX(456px);
 }
