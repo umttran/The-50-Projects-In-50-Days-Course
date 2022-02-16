@@ -5,12 +5,54 @@
 }
 
 body {
+  background-image: linear-gradient(0deg, #b7e4c7, #74c69d);
   font-family: 'Roboto', sans-serif;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   overflow: hidden;
   margin: 0;
+}
+
+.search {
+  height: 64px;
+  position: relative;
+}
+
+.search .input {
+  font-size: 18px;
+  background-color: #fff;
+  border: none;
+  border-radius: 32px;
+  padding: 15px;
+  height: 64px;
+  width: 64px;
+  transition: width 0.3s ease;
+}
+
+.btn {
+  font-size: 24px;
+  background-color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 64px;
+  width: 64px;
+  transition: transform 0.3s ease;
+}
+
+.btn:focus, .input:focus {
+  outline: none;
+}
+
+.search.active .input {
+  width: 264px;
+}
+
+.search.active .btn {
+  transform: translateX(200px);
 }
