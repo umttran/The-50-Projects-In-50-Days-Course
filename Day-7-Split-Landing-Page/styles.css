@@ -6,6 +6,9 @@
   --right-bg-color: rgba(43, 43, 43, 0.7);
   --left-btn-hover-color: rgba(87, 84, 236, 1);
   --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --hover-width-wide: 75%;
+  --hover-width-narrow: 25%;
+  --speed: 1000ms;
 }
 /* End - Variables */
 
@@ -100,4 +103,36 @@ h1 {
   right: 0;
   background: url("./assets/img/xbox-series-x.jpg") no-repeat;
   background-size: cover;
+}
+
+.split.left, .split.left::before, .split.right, .split.right::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+/* Hover Styles */
+.hover-left .left {
+  width: var(--hover-width-wide);
+}
+.hover-left .right {
+  width: var(--hover-width-narrow);
+}
+
+.hover-right .right {
+  width: var(--hover-width-wide);
+}
+.hover-right .left {
+  width: var(--hover-width-narrow);
+}
+
+
+@media only screen and (max-width: 900px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    width: 12rem;
+    padding: 1.2rem;
+  }
 }
