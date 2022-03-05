@@ -47,3 +47,45 @@ h1 {
 .faq.active .faq-text {
   display: block;
 }
+
+/* Toggle Buttons */
+.faq-toggle {
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+
+.fa-toggle:focus {
+  outline: none;
+}
+
+/* Hide x mark when the div has active class */
+.faq-toggle .fa-xmark {
+  display: none;
+}
+
+/* Show x mark when the div has active class */
+.faq.active .faq-toggle .fa-xmark {
+  display: block;
+  color: #fff;
+}
+
+/* Hide chevron icon when the div has active class */
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+}
