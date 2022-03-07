@@ -20,7 +20,7 @@ body {
   margin: 0;
 }
 
-/* nav styles when nav is NOT active*/
+/* nav styles when nav is NOT Active*/
 nav {
   background-color: #fff;
   padding: 20px;
@@ -34,12 +34,12 @@ nav {
   transition: width 0.6s linear;
 }
 
-/* nav styles when nav is active*/
+/* nav styles when nav is Active*/
 nav.active {
   width: 350px;
 }
 
-/* ul styles when nav is NOT active*/
+/* ul styles when nav is NOT Active*/
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -49,19 +49,19 @@ nav ul {
   transition: width 0.6s linear;
 }
 
-/* ul styles when nav is active*/
+/* ul styles when nav is Active*/
 nav.active ul {
   width: 100%;
 }
 
-/* li styles when nav is NOT active*/
+/* li styles when nav is NOT Active*/
 nav ul li {
   transform: rotateY(0 deg);
   opacity: 0;
   transition: transform 0.6s linear, opacity 0.6s linear;
 }
 
-/* li styles when nav is active*/
+/* li styles when nav is Active*/
 nav.active ul li {
   transform: rotateY(360deg);
   opacity: 1;
@@ -73,3 +73,44 @@ nav ul a {
   text-decoration: none;
   margin: 0 10px;
 }
+
+/* Toggle Button Icon general styles */
+.icon {
+  height: 30px;
+  width: 30px;
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+
+.icon:focus {
+  outline: 0;
+}
+
+/* Common styles of button lines  */
+.icon .line {
+  background-color: #5290f9;
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+/* Icon Bottom Line Styles */
+.icon .lineBottom {
+  top: auto;
+  bottom: 10px;
+}
+
+/* Toggle Button Icon Lines Styles when nav is Active */
+nav.active .icon .lineTop {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+nav.active .icon .lineBottom {
+  transform: rotate(765deg) translateY(-5.5px);
+}
+/* End - Toggle Button Icon Lines Styles when nav is Active */
