@@ -9,6 +9,15 @@ textArea.focus();
 
 textArea.addEventListener('keyup', (e) => {
   createTags(e.target.value);
+
+  // Check if the Enter is pressed
+  if(e.key === 'Enter') {
+    setTimeout(() => {
+      e.target.value = ''
+    }, 10);
+
+    randomSelect();
+  }
 })
 
 function createTags(input) {
@@ -28,3 +37,47 @@ function createTags(input) {
     tagsEl.appendChild(tagEl);
   })
 }
+
+// Random Selection Process
+function randomSelect() {
+  // Number of times it's going to highlight each one before it stops
+  const times = 20;
+
+  // Highlight random tags 
+  const interval = setInterval(() => {
+    const randomTag = pickRandomTag();
+
+    highlightTag(randomTag);
+
+    setTimeout(() => {
+      unHighligtTag(randomTag)
+    },100)
+
+  }, 100);
+
+  // Stop random highlighting and select a tag to highlight
+  setTimeout(() => {
+    clearInterval(interval);
+
+    setTimeout(() => {
+      const randomTag = pickRandomTag();
+
+      highlightTag(randomTag);
+    }, 100)
+  }, times * 100)
+}
+
+function pickRandomTag() {
+  const tags = document.querySelectorAll('.tag')
+  
+  return tags[Math.floor(Math.random() * tags.length)];
+}
+
+function highlightTag(tag) {
+  tag.classList.add('highlight');
+}
+
+function unHighligtTag(tag) {
+  tag.classList.remove('highlight');
+}
+// End of Random Selection Process
