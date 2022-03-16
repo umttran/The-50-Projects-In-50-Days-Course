@@ -31,7 +31,7 @@ function showMovies(movies) {
       <img src="${IMG_PATH + poster_path}" alt="${title} Image">
       <div class="movie-info">
         <h3>${title}</h3>
-        <span class="green">${vote_average}</span>
+        <span class="${getClassByRate(vote_average)}">${vote_average}</span>
       </div>
       <div class="overview">
         <h3>Overview</h3>
@@ -41,6 +41,16 @@ function showMovies(movies) {
 
     main.appendChild(movieEL);
   })
+}
+
+function getClassByRate(vote) {
+  if(vote >= 8){
+    return 'green'
+  } else if (vote >= 5) {
+    return 'orange'
+  } else {
+    return 'red'
+  }
 }
 
 // Search for a movie written to Input using API Endpoint
