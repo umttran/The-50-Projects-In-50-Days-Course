@@ -2,6 +2,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=52ceef4c013f0460da88cdcbac01fc7a&query="';
 
+const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
@@ -12,7 +13,34 @@ async function getMovies(url) {
   const res = await fetch(url);
   const data = await res.json();
 
-  console.log(data.results);
+  showMovies(data.results);
+}
+
+// Adding movies to the DOM
+function showMovies(movies) {
+  main.innerHTML = '';
+
+  movies.forEach((movie) => {
+    const {title, poster_path, vote_average, overview} = movie;
+
+    const movieEL = document.createElement('div');
+
+    movieEL.classList.add('movie');
+
+    movieEL.innerHTML = `
+      <img src="${IMG_PATH + poster_path}" alt="${title} Image">
+      <div class="movie-info">
+        <h3>${title}</h3>
+        <span class="green">${vote_average}</span>
+      </div>
+      <div class="overview">
+        <h3>Overview</h3>
+        ${overview}
+      </div>
+    `
+
+    main.appendChild(movieEL);
+  })
 }
 
 // Search for a movie written to Input using API Endpoint
