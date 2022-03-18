@@ -24,3 +24,30 @@ function setActiveSlide() {
 
   slides[activeSlide].classList.add('active');
 }
+
+// Event Listeners of Slider Arrows
+prevBtn.addEventListener('click', () => {
+  activeSlide++;
+
+  if(activeSlide > slides.length-1) {
+    activeSlide = 0;
+  }
+
+  console.log(activeSlide);
+  setBgToBody();
+  setActiveSlide();
+});
+
+nextBtn.addEventListener('click', () => {
+  activeSlide--;
+
+  if(activeSlide > slides.length-1) {
+    activeSlide = 0;
+  }else if (activeSlide < 0) {
+    activeSlide = slides.length - 1;
+  }
+
+  setBgToBody();
+  setActiveSlide();
+});
+// End - Event Listeners of Slider Arrows
