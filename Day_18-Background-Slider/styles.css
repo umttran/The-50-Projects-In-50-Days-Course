@@ -31,3 +31,27 @@ body::before {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: -1;
 }
+
+.slider-container {
+  width: 70vw;
+  height: 70vh;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+.slide.active {
+  opacity: 1;
+}
