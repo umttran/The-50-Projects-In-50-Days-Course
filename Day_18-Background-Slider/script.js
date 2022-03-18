@@ -15,3 +15,12 @@ setBgToBody();
 function setBgToBody() {
   body.style.backgroundImage = slides[activeSlide].style.backgroundImage;
 }
+
+// Function to set active slide
+function setActiveSlide() {
+  slides.forEach(slide => {
+    slide.classList.remove('active');
+  })
+
+  slides[activeSlide].classList.add('active');
+}
