@@ -56,3 +56,59 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  width: 3px;
+  border-radius: 50%;
+  /* For center of rotation */
+  transform-origin: bottom center;
+
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  width: 6px;
+  height: 60px;
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  background-color: #e74c3c;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-point::after {
+  content: '';
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
