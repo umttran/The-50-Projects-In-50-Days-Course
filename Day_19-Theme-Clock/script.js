@@ -15,6 +15,19 @@ const needleSecond = document.querySelector(".needle.second");
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const months = ["Jun", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug","Sep", "Oct", "Nov", "Dec"];
 
+// Dark Mode Functionality
+toggleBtn.addEventListener('click', (e) => {
+  const html = document.querySelector('html');
+
+  if(html.classList.contains('dark')) {
+    html.classList.remove('dark');
+    e.target.innerHTML = 'Dark Mode';
+  } else {
+    html.classList.add('dark');
+    e.target.innerHTML = 'Light Mode';
+  }
+});
+
 // Clock Setting Function
 function setTime() {
   const time = new Date();
@@ -39,9 +52,9 @@ function setTime() {
   `;
   
   // When the needles reach to 0 degree angle at the end of a full spin, prevent them from going backwards to the starting point
-  needleHour.style.transition = `${hours === 0 ? "none" : "all 0.5s ease-in"}`
-  needleMinute.style.transition = `${minutes === 0 ? "none" : "all 0.5s ease-in"}`
-  needleSecond.style.transition = `${seconds === 0 ? "none" : "all 0.5s ease-in"}`
+  needleHour.style.transition = `${hours === 0 ? "none" : "all 0.5s ease-in"}`;
+  needleMinute.style.transition = `${minutes === 0 ? "none" : "all 0.5s ease-in"}`;
+  needleSecond.style.transition = `${seconds === 0 ? "none" : "all 0.5s ease-in"}`;
 
   // Display the time info
   timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes} 
