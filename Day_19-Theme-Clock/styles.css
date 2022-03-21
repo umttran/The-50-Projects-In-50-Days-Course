@@ -9,10 +9,20 @@
   --secondary-color: #fff;
 }
 
+html {
+  transition: all 0.5s ease-in;
+}
+
 /* Variables for Dark Mode */
 html.dark {
   --primary-color: #fff;
   --secondary-color: #333;
+}
+
+/* Dark Mode Styles */
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
 }
 
 body {
