@@ -17,3 +17,32 @@ body {
     flex-direction: column;
   }
 }
+
+.empty {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  border: solid 3px #000;
+  background: #fff;
+}
+
+/* The element with the image on it */
+.fill {
+  width: 144px;
+  height: 144px;
+  /* Unsplash Random Image URL */
+  background-image: url('https://source.unsplash.com/random/150x150');
+  cursor: pointer;
+}
+
+/* While dragging an element create border on it */
+.hold {
+  border: 4px solid #ccc;
+}
+
+/* When hovering over an element */
+.hovered {
+  background-color: #8e8e8e;
+  border-color: #fff;
+  border-style: dashed;
+}
