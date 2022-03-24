@@ -3,6 +3,13 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
+// Bring toolbox elements from the DOM
+const increaseBtn = document.getElementById('increase');
+const decreaseBtn = document.getElementById('decrease');
+const sizeEL = document.getElementById('size');
+const colorEl = document.getElementById('color');
+const clearEl = document.getElementById('clear');
+
 // Create variables
 let size = 10;
 let color = 'black';
@@ -61,3 +68,42 @@ function drawLine(x1, y1, x2, y2) {
   // Multiply lineWidth by 2 to make the line the same thickness as the circle
   ctx.stroke();
 }
+
+// Toolbox Elements Event Listeners
+// Increase Button
+increaseBtn.addEventListener('click', () => {
+  size += 5;
+
+  if(size >50) {
+    size = 50;
+  }
+  
+  updateSizeInfo();
+});
+
+// Decrease Button
+decreaseBtn.addEventListener('click', () => {
+  size -= 5;
+
+  if(size < 5) {
+    size = 5;
+  }
+
+  updateSizeInfo();
+});
+
+// Update Size Info on Toolbox
+function updateSizeInfo() {
+  sizeEL.innerText = size;
+};
+
+// Color Change
+colorEl.addEventListener('change', (e) => {
+  color = e.target.value;
+});
+
+// Clear Drawing
+clearEl.addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+});
+// END - Toolbox Elements Event Listeners
