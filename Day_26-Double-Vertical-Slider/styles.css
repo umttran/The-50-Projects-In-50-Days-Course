@@ -59,3 +59,40 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+/* Button Styles */
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 20px 10px;
+}
+
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+.slider-container .action-buttons button {
+  position: absolute;
+  top: 50%;
+  left: 35%;
+  z-index: 50;
+}
+
+.slider-container .action-buttons .down-btn {
+  transform: translateX(-100%);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.slider-container .action-buttons .up-btn {
+  transform: translateY(-100%);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
