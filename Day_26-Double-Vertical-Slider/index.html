@@ -6,14 +6,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Font Awesome 6.0.0 Kit -->
-  <!-- <script src="https://kit.fontawesome.com/7b65b20d28.js" crossorigin="anonymous"></script> -->
+  <script src="https://kit.fontawesome.com/7b65b20d28.js" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="./styles.css">
   
   <title>Double Vertical Slider Project</title>
 </head>
 <body>
-  
+  <div class="slider-container">
+
+    <!-- 
+      Texts and Images will change in the opposite direction. 
+      Therefore the first text will show the last image. 
+      If new text is added to the end of the existing texts in the div, 
+      the new image must be added to the beginning of the existing 
+      images in the div.
+    -->
+
+    <div class="text-slide">
+      <div style="background-color: #adff2f;">
+        <h1>Happy people</h1>
+        <p>with their friends</p>
+      </div>
+      <div style="background-color: #fd3555;">
+        <h1>Nature flower</h1>
+        <p>all in pink</p>
+      </div>
+      <div style="background-color: #2a86ba ;">
+        <h1>Blue sky</h1>
+        <p>with it's mountains</p>
+      </div>
+      <div style="background-color: #252e33;">
+        <h1>Lonely castle</h1>
+        <p>in the wilderness</p>
+      </div>
+      <div style="background-color: #ffb866;">
+        <h1>Flying eagle</h1>
+        <p>in the sunset</p>
+      </div>
+    </div>
+
+    <div class="image-slide">
+      <div style="background-image: url('');"></div>
+      <div style="background-image: url('');"></div>
+      <div style="background-image: url('');"></div>
+      <div style="background-image: url('');"></div>
+    </div>
+
+    <div class="action-buttons">
+      <button class="down-btn">
+        <i class="fa-solid fa-arrow-down"></i>
+      </button>
+      <button class="up-btn">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+  </div>
 
 
 
