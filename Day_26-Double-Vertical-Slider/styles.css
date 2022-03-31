@@ -80,6 +80,16 @@ button:focus {
   outline: none;
 }
 
+/*
+  Hide the Up Button until the Down Button is clicked for the first time 
+  This will be displayed via JS
+*/
+.up-btn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .7s ease-in;
+}
+
 .slider-container .action-buttons button {
   position: absolute;
   top: 50%;
