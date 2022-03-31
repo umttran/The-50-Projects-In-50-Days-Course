@@ -15,7 +15,23 @@ textSlide.style.top = `-${(slidesLength - 1) * 100}vh`;
 
 // Event Listeners
 upBtn.addEventListener('click', () => changeSlide('up'));
-downBtn.addEventListener('click', () => changeSlide('down'));
+downBtn.addEventListener('click', () => {
+  changeSlide('down');
+  if(isDownBtnClicked === false){
+    showUpBtn();
+  }
+});
+
+// To check if the Down Button is clicked
+let isDownBtnClicked = false;
+
+// Show the Up Button when the Down button is clicked for the first time
+// This function will be triggered only once
+function showUpBtn() {
+  isDownBtnClicked = true;
+  upBtn.style.opacity = '1';
+  upBtn.style.pointerEvents = 'auto';
+}
 
 // Image Change Function
 const changeSlide = (direction) => {
