@@ -47,9 +47,29 @@ body {
 
 .toast {
   background-color: #fff;
-  color: #004085;
   border-radius: .5rem;
   padding: 1rem 2rem;
   margin: 0.5rem;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.toast.info {
+  color: #004085;
+  background-color: #cce5ff;
+}
+.toast.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+.toast.error {
+  background-color: #f8d7da;
+  color:#721c24
+}
+.toast.warning {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.toast.dark {
+  color: #1b1e21;
+  background-color: #d6d8d9;
 }
