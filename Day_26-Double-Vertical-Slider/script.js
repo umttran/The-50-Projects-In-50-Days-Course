@@ -10,8 +10,8 @@ const slidesLength = imageSlide.querySelectorAll('div').length;
 
 let activeSlideIndex = 0;
 
-// Place the last text in the correct position
-textSlide.style.top = `-${(slidesLength - 1) * 100}vh`;
+// Place the image of the first Text Slide on startup 
+imageSlide.style.top = `-${(slidesLength - 1) * 100}vh`;
 
 // Event Listeners
 upBtn.addEventListener('click', () => changeSlide('up'));
