@@ -40,19 +40,18 @@ const changeSlide = (direction) => {
 
   // Button Conditions
   if(direction === "up") {
-    activeSlideIndex++;
-    if(activeSlideIndex > slidesLength - 1) {
-      activeSlideIndex = 0;
-    }
-  } else if(direction === 'down') {
     activeSlideIndex--;
     if(activeSlideIndex < 0) {
       activeSlideIndex = slidesLength - 1;
     }
+  } else if(direction === 'down') {
+    activeSlideIndex++;
+    if(activeSlideIndex > slidesLength - 1) {
+      activeSlideIndex = 0;
+    }
   }
 
   // Set Position of Text and Image
-  textSlide.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
-  imageSlide.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
-
+  textSlide.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
+  imageSlide.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`;
 }
