@@ -16,7 +16,9 @@ async function getUserInfo(username){
     
     createUserCard(data);
   } catch (error) {
-    console.log(error);
+    if(error.response.status == 404){
+      createErrorCard('User Not Found');
+    }
   }
 
 }
@@ -49,6 +51,17 @@ function createUserCard(user) {
   `;
 
   main.innerHTML = userCard;
+}
+
+// Function to create Error Card
+function createErrorCard(message) {
+  const errorCard = `
+    <div class='card'>
+      <h1>${message}</h1>
+    </div>
+  `;
+
+  main.innerHTML = errorCard;
 }
 
 // Form Event Listener
