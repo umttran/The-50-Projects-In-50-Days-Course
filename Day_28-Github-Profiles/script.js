@@ -24,7 +24,7 @@ async function getUserInfo(username){
 
 }
 
-// Function to creatte User Card
+// Function to create User Card
 function createUserCard(user) {
   const userCard = `
     <div class="card">
@@ -58,10 +58,25 @@ function createUserCard(user) {
 async function getUserRepos(username) {
   try {
     const { data } = await axios(APIURL + username + '/repos');
-
+    addReposToCard(data);
   } catch (error) { 
     createErrorCard('Error: Problem Fetching Repos');
   }
+}
+
+// Function to Add Repos to User Card
+function addReposToCard(repos) {
+  const reposElement = document.getElementById('repos');
+
+  repos.slice(0, 5).forEach(repo => {
+    const repoEl = document.createElement('a');
+    repoEl.classList.add('repo');
+    repoEl.href = repo.html_url;
+    repoEl.target = '_blank';
+    repoEl.innerText = repo.name;
+
+    reposElement.appendChild(repoEl);
+  })
 }
 
 // Function to create Error Card
