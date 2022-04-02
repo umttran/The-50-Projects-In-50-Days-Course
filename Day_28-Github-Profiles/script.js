@@ -53,7 +53,7 @@ function createUserCard(user) {
 // Function to fetch User Repos
 async function getUserRepos(username) {
   try {
-    const { data } = await axios(APIURL + username + '/repos');
+    const { data } = await axios(APIURL + username + '/repos?sort=created');
     addReposToCard(data);
   } catch (error) { 
     createErrorCard('Error: Problem Fetching Repos');
