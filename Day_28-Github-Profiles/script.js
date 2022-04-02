@@ -15,7 +15,8 @@ async function getUserInfo(username){
     const { data } = await axios(APIURL + username);
     
     createUserCard(data);
-  } catch (error) {
+    getUserRepos(username);
+  } catch (error) { 
     if(error.response.status == 404){
       createErrorCard('User Not Found');
     }
@@ -51,6 +52,16 @@ function createUserCard(user) {
   `;
 
   main.innerHTML = userCard;
+}
+
+// Function to fetch User Repos
+async function getUserRepos(username) {
+  try {
+    const { data } = await axios(APIURL + username + '/repos');
+
+  } catch (error) { 
+    createErrorCard('Error: Problem Fetching Repos');
+  }
 }
 
 // Function to create Error Card
