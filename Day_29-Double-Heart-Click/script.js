@@ -43,4 +43,7 @@ const createHeart = (e) => {
   heartIcon.style.left = `${insideX}px`;
 
   image.appendChild(heartIcon);
+
+  // Remove created Heart element from the DOM
+  setTimeout( () => heartIcon.remove(), 2000 );
 }
