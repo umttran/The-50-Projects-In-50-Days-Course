@@ -3,6 +3,10 @@ const image = document.querySelector('.image');
 const numberOfLikes = document.querySelector('#numOfLikes');
 
 let clickTime = 0;
+let totalLikes = 0;
+
+// Set the initial number of likes to 0
+numberOfLikes.innerHTML = totalLikes;
 
 // Create custom double click event instead of using default dblclick event 
 image.addEventListener('click', (e) => {
@@ -37,12 +41,15 @@ const createHeart = (e) => {
   const insideX = cursorX - offsetLeft;
   const insideY = cursorY - offsetTop;
 
-// Set heart icon position to cursor click point 
-// (absolute position is given to Icon in css file)
+  // Set heart icon position to cursor click point 
+  // (absolute position is given to Icon in css file)
   heartIcon.style.top = `${insideY}px`;
   heartIcon.style.left = `${insideX}px`;
 
   image.appendChild(heartIcon);
+
+  // Increase number of likes
+  numberOfLikes.innerHTML = ++totalLikes;
 
   // Remove created Heart element from the DOM
   setTimeout( () => heartIcon.remove(), 2000 );
