@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,14 +10,21 @@
   <!-- <script src="https://kit.fontawesome.com/7b65b20d28.js" crossorigin="anonymous"></script> -->
 
   <link rel="stylesheet" href="./styles.css">
-  
+
   <title>Auto Text Effect Project</title>
 </head>
-<body>
-  
 
+<body>
+  <!--Later on data in h1 element below will be inserted via Javascript -->
+  <h1 id="text">Project Starting...</h1>
+
+  <div class="speed-control">
+    <label for="speed-input">Speed:</label>
+    <input type="number" class="speed-input" id="speed-input" name="speed-input" value="1" min="1" max="5" step="1">
+  </div>
 
 
   <script src="./script.js"></script>
 </body>
+
 </html>
