@@ -25,5 +25,22 @@ const createHeart = (e) => {
   heartIcon.classList.add('fa-solid');
   heartIcon.classList.add('fa-heart');
 
+  // Get cursor click position relative to entire page
+  const cursorX = e.clientX;
+  const cursorY = e.clientY;
+
+  // Get the distances between the image and left&top of the page
+  const offsetLeft = e.target.offsetLeft;
+  const offsetTop = e.target.offsetTop;
+
+  // Cursor click position relative to the Image borders
+  const insideX = cursorX - offsetLeft;
+  const insideY = cursorY - offsetTop;
+
+// Set heart icon position to cursor click point 
+// (absolute position is given to Icon in css file)
+  heartIcon.style.top = `${insideY}px`;
+  heartIcon.style.left = `${insideX}px`;
+
   image.appendChild(heartIcon);
 }
