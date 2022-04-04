@@ -17,3 +17,13 @@ image.addEventListener('click', (e) => {
     }
   }
 });
+
+// Heart Creation Function (when double click function is triggered)
+const createHeart = (e) => {
+  // Create heart element with its classes
+  const heartIcon = document.createElement('i');
+  heartIcon.classList.add('fa-solid');
+  heartIcon.classList.add('fa-heart');
+
+  image.appendChild(heartIcon);
+}
