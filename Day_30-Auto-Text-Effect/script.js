@@ -34,8 +34,15 @@ async function generateJoke() {
     
     textEl.innerText = joke.slice(0, index);
     
-    // To start over typing the joke again
+    // To wait for a while before type the joke again
     if(index == joke.length) {
+      setTimeout(() => {
+        waitForSec()
+      }, 3000);
+    }
+    
+    // Reset index to start over typing the joke again
+    function waitForSec() {
       index = 0;
     }
 
