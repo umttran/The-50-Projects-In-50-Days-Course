@@ -5,9 +5,9 @@ const speedEl = document.getElementById('speed-input');
 const baseURL = "https://v2.jokeapi.dev/"
 const categories = ["Programming", "Misc", "Pun", "Spooky",];
 const params = [
-    "blacklistFlags=nsfw,religious,racist,political,sexist,explicit",
-    "type=single"
-  ];
+  "blacklistFlags=nsfw,religious,racist,political,sexist,explicit",
+  "type=single"
+];
 
 const jokeURL = (baseURL + "/joke/" + categories.join(",") + "?" + params.join("&"));
 
@@ -19,7 +19,7 @@ async function generateJoke() {
   const res = await fetch(jokeURL);
   const data = await res.json();
   const joke = data.joke;
- 
+
   // Index variable will be used for where we are in the text.
   // Text is going to be typing one by one.
   let index = 1;
@@ -28,19 +28,19 @@ async function generateJoke() {
   let speed = 100 / speedEl.value;
 
   writeText();
-  
+
   // Function to write the joke to HTML
   function writeText() {
-    
+
     textEl.innerText = joke.slice(0, index);
-    
+
     // To wait for a while before type the joke again
-    if(index == joke.length) {
+    if (index == joke.length) {
       setTimeout(() => {
         waitForSec()
       }, 3000);
     }
-    
+
     // Reset index to start over typing the joke again
     function waitForSec() {
       index = 0;
@@ -51,5 +51,8 @@ async function generateJoke() {
     setTimeout(writeText, speed);
   }
 
-  console.log(joke);
+  // To change Typing Speed 
+  speedEl.addEventListener('input', (e) => {
+    speed = 100 / e.target.value;
+  });
 }
