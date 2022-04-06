@@ -13,11 +13,31 @@ const jokeURL = (baseURL + "/joke/" + categories.join(",") + "?" + params.join("
 
 generateJoke();
 
+// Generate random joke using Async/Await
 async function generateJoke() {
 
   const res = await fetch(jokeURL);
   const data = await res.json();
-  let joke = data.joke;
+  const joke = data.joke;
+ 
+  // Index variable will be used for where we are in the text.
+  // Text is going to be typing one by one.
+  let index = 1;
+
+  // Variable for typing speed
+  let speed = 100 / speedEl.value;
+
+  writeText();
+  
+  // Function to write the joke to HTML
+  function writeText() {
+    
+    textEl.innerText = joke.slice(0, index);
+ 
+    index++;
+
+    setTimeout(writeText, speed);
+  }
 
   console.log(joke);
 }
