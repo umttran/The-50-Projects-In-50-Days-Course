@@ -33,7 +33,12 @@ async function generateJoke() {
   function writeText() {
     
     textEl.innerText = joke.slice(0, index);
- 
+    
+    // To start over typing the joke again
+    if(index == joke.length) {
+      index = 0;
+    }
+
     index++;
 
     setTimeout(writeText, speed);
