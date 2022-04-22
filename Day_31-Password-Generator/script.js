@@ -8,6 +8,22 @@ const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
 const clipboardEl = document.getElementById('clipboard');
 
+// Generate Password button event listener
+generateEl.addEventListener('click', () => {
+  // Requested password length info
+  const length = lengthEl.value;
+  // Requested password options info(return will be true or false)
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
+
+  // The return from the generatePassword function will be inserted to result element
+  resultEl.innerText = generatePassword(length, hasLower, hasUpper, hasNumber, hasSymbol);
+});
+
+
+
 // Random Character Generation Functions
 // Lower Character
 function randomLowerChar() {
