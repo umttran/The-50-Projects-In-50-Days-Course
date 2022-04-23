@@ -55,8 +55,11 @@ function generatePassword(length, lower, upper, number, symbol) {
     })
   }
   
-  const finalPassword = createdPassword.slice(0, length);
+  let finalPassword = createdPassword.slice(0, length);
 
+  // Shuffle the final password
+  finalPassword = finalPassword.split('').sort(function(){return 0.5-Math.random()}).join('');
+  
   return finalPassword
 }
 
