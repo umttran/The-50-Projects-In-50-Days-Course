@@ -14,3 +14,46 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
+h3 {
+  margin-top: 0;
+}
+
+.option-container {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* Hide default input checkbox */
+.option {
+  visibility: hidden;
+}
+
+.option-label {
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  background-color: #d0d0d0;
+  border-radius: 20px;
+  margin: 0 1rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.option:checked + .option-label {
+  background-color: #32ADE6;
+}
+
+.ball {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+}
