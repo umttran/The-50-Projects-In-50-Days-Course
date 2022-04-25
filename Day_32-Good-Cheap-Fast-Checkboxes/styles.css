@@ -47,13 +47,42 @@ h3 {
 }
 
 .ball {
-  height: 34px;
-  width: 34px;
+  height: 36px;
+  width: 36px;
   border-radius: 50%;
   background-color: #fff;
   position: absolute;
-  top: 3px;
-  left: 3px;
+  top: 2px;
+  left: 2px;
   align-items: center;
   justify-content: center;
+  animation: slideOff 0.2s linear forwards;
+}
+
+.option:checked + .option-label .ball {
+  animation: slideOn 0.2s linear forwards;
+}
+
+@keyframes slideOn {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes slideOff {
+  0% {
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
