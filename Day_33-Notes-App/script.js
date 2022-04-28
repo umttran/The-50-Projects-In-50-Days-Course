@@ -9,7 +9,6 @@ const notes = JSON.parse(localStorage.getItem('notes'));
 // Send stored notes text data to the function
 if(notes) {
   notes.forEach(note => {
-    console.log(note);
     addNewNote(note);
   })
 }
@@ -46,6 +45,10 @@ function addNewNote(text = '') {
   const editButton = note.querySelector('.edit');
   const main = note.querySelector('.main');
   const textArea = note.querySelector('textarea');
+
+  // If there are stored notes text, add them to main and textarea elements
+  textArea.value = text;
+  main.innerHTML = marked.parse(text);
 
   deleteButton.addEventListener('click', () => {
     note.remove();
