@@ -3,6 +3,17 @@ const addButton = document.getElementById('add');
 
 addButton.addEventListener('click', () => addNewNote());
 
+// Fetch notes text data from local storage if excist
+const notes = JSON.parse(localStorage.getItem('notes'));
+
+// Send stored notes text data to the function
+if(notes) {
+  notes.forEach(note => {
+    console.log(note);
+    addNewNote(note);
+  })
+}
+
 function addNewNote(text = '') {
   const note = document.createElement('div');
   note.classList.add('note');
