@@ -52,6 +52,8 @@ function addNewNote(text = '') {
 
   deleteButton.addEventListener('click', () => {
     note.remove();
+
+    updateLocalStorage();
   });
 
   // Switching between text edit mode and main div with Edit Button
