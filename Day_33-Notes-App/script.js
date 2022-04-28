@@ -9,12 +9,15 @@ function addNewNote(text = '') {
 
   note.innerHTML = `
   <div class="tools">
-    <button class="edit">
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
-    <button class="delete">
-      <i class="fa-solid fa-trash"></i>
-    </button>
+    <div class="edit-mode">Edit Mode</div>
+    <div>
+      <button class="edit">
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+      <button class="delete">
+        <i class="fa-solid fa-trash"></i>
+      </button>
+    </div>
   </div>
 
   <!-- When text edit mode is NOT active the text will show on 'main' div below. -->
@@ -26,6 +29,7 @@ function addNewNote(text = '') {
   <div class="main ${text ? '' : 'hidden'}"></div>
   <textarea class="${text ? 'hidden' : ''}"></textarea>
   `
+  
   // Bring elements from the note element
   const deleteButton = note.querySelector('.delete');
   const editButton = note.querySelector('.edit');
@@ -40,10 +44,30 @@ function addNewNote(text = '') {
   editButton.addEventListener('click', () => {
     main.classList.toggle('hidden');
     textArea.classList.toggle('hidden');
+
+    editModeInfo();
   })
 
+  // Add the text written in textarea in edit mode to main div as content
+  // Let user to be able to use the Markdown rules in text
+  textArea.addEventListener('input', (e) => {
+    // The destructuring to pull out the value from e.target
+    const { value } = e.target;
 
+    main.innerHTML = marked.parse(value);
+  })
+
+  // Show or hide edit mode info text
+  function editModeInfo() {
+    const tools = note.querySelector('.tools');
+    const editModeInfo = tools.querySelector('.edit-mode');
+
+    textArea.classList.contains('hidden') ? 
+    editModeInfo.style.visibility = 'hidden' : 
+    editModeInfo.style.visibility = 'visible';
+  }
+
+  // Add note element to the body
   document.body.appendChild(note);
-
 
 }
