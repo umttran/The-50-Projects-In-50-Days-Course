@@ -55,6 +55,8 @@ function addNewNote(text = '') {
     const { value } = e.target;
 
     main.innerHTML = marked.parse(value);
+
+    updateLocalStorage();
   })
 
   // Show or hide edit mode info text
@@ -70,4 +72,16 @@ function addNewNote(text = '') {
   // Add note element to the body
   document.body.appendChild(note);
 
+}
+
+function updateLocalStorage() {
+  const notesText = document.querySelectorAll('textarea');
+
+  const notes = [];
+
+  // Get each notes text and add them to the notes array
+  notesText.forEach(note => notes.push(note.value));
+
+  // Add notes array to the local storage with the key 'notes'
+  localStorage.setItem('notes', JSON.stringify(notes));
 }
