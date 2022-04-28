@@ -23,8 +23,8 @@ function addNewNote(text = '') {
   <!-- The textarea will be used for text editing.-->
   <!-- If there is text, the textarea will be hidden -->
 
-  <div class="main "></div>
-  <textarea></textarea>
+  <div class="main ${text ? '' : 'hidden'}"></div>
+  <textarea class="${text ? 'hidden' : ''}"></textarea>
   `
 
   document.body.appendChild(note);
