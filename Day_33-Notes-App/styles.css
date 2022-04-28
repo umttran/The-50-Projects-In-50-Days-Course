@@ -61,6 +61,12 @@ body {
   cursor: pointer;
 }
 
+.note .main {
+  width: 100%;
+  height: 340px;
+  padding: 0 1.5rem;
+  overflow: scroll;
+}
 .note textarea {
   width: 100%;
   height: 400px;
