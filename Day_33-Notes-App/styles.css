@@ -47,9 +47,9 @@ body {
 
 .note .tools {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: #9ec862;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
 }
 
 .note .tools button {
