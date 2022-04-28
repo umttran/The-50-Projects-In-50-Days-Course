@@ -26,12 +26,22 @@ function addNewNote(text = '') {
   <div class="main ${text ? '' : 'hidden'}"></div>
   <textarea class="${text ? 'hidden' : ''}"></textarea>
   `
-  
+  // Bring elements from the note element
   const deleteButton = note.querySelector('.delete');
+  const editButton = note.querySelector('.edit');
+  const main = note.querySelector('.main');
+  const textArea = note.querySelector('textarea');
 
   deleteButton.addEventListener('click', () => {
     note.remove();
   });
+
+  // Switching between text edit mode and main div with Edit Button
+  editButton.addEventListener('click', () => {
+    main.classList.toggle('hidden');
+    textArea.classList.toggle('hidden');
+  })
+
 
   document.body.appendChild(note);
 
