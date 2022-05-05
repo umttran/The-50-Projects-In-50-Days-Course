@@ -10,3 +10,147 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
+h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 10px;
+}
+
+.counter {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.counter.hideEl {
+  transform: translate(-50%, -50%) scale(0);
+  animation: hideEl .3s ease-out;
+}
+
+@keyframes hideEl {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.replay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  text-align: center;
+}
+
+.replay.showEl {
+  transform: translate(-50%, -50%) scale(1);
+  animation: showEl 0.3s ease-out;
+}
+
+@keyframes showEl {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.numbers {
+  width: 250px;
+  height: 50px;
+  font-size: 50px;
+  color: #9ec862;
+  position: relative;
+  overflow: hidden;
+}
+
+.numbers span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(120deg);
+  transform-origin: bottom center;
+}
+
+.numbers span.in {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: goIn 0.5s ease-in-out;
+}
+
+.numbers span.out {
+  animation: goOut 0.5s ease-in-out;
+}
+
+@keyframes goIn {
+  0%{
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(-20deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes goOut {
+  0%{
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(20deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-120deg);
+  }
+}
+
+#replayBtn{
+  cursor: pointer;
+  color: #f0f8ff;
+  background-color: #9ec862;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block;
+  transition: all 0.3s;
+}
+
+#replayBtn span{
+  display: inline-block;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+#replayBtn span:after{
+  content: '\00bb';
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+#replayBtn:hover span{
+  padding-right: 25px;
+}
+
+#replayBtn:hover span:after{
+  opacity: 1;
+  right: 0;
+}
