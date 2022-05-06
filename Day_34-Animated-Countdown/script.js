@@ -2,9 +2,21 @@
 const numbers = document.querySelectorAll('.numbers span');
 const counter = document.querySelector('.counter');
 const replay = document.querySelector('.replay');
-const replayBtn = document.getElementById('replay');
+const replayBtn = document.getElementById('replayBtn');
 
 runAnimation();
+
+// Replay button functionality to reset and replay
+function replayAnimation() {
+  counter.classList.remove('hideEl');
+  replay.classList.remove('showEl');
+
+  numbers.forEach((number) => {
+    number.classList.value = '';
+  });
+
+  numbers[0].classList.add('in');
+}
 
 function runAnimation() {
   numbers.forEach( (number, index) => {
@@ -25,3 +37,9 @@ function runAnimation() {
 
   })
 }
+
+// Event Listener for replay button
+replayBtn.addEventListener('click', () => {
+  replayAnimation();
+  runAnimation();
+})
