@@ -4,3 +4,23 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 const img = document.querySelectorAll('#images img');
+
+// Index of displayed image
+let index = 0;
+
+// To keep slides running
+let interval = setInterval(run, 2000)
+
+function run() {
+  index++;
+  changeImage();
+}
+
+function changeImage() {
+  // To return to the first image after the last image is shown
+  if (index > img.length - 1) {
+    index = 0;
+  }
+  
+  images.style.transform = `translateX(${-index * 480}px)`
+}
