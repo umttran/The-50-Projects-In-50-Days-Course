@@ -12,3 +12,42 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+.carousel {
+  width: 480px;
+  height: 520px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.image-container {
+  display: flex;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+img {
+  width: 480px;
+  height: 480px;
+  object-fit: cover;
+}
+
+.buttons-container {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles of common class for prev&next buttons */
+.button {
+  width: 49.7%;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
