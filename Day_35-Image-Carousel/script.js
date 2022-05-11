@@ -17,10 +17,23 @@ function run() {
 }
 
 function changeImage() {
-  // To return to the first image after the last image is shown
+  // To return to the first image after the last image is displayed
   if (index > img.length - 1) {
     index = 0;
   }
   
   images.style.transform = `translateX(${-index * 480}px)`
 }
+
+// Button Event Listeners
+nextBtn.addEventListener('click', () => {
+  index++;
+  changeImage();
+})
+
+prevBtn.addEventListener('click', () => {
+  index--;
+  changeImage();
+})
+// END - Button Event Listeners
+
