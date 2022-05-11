@@ -33,11 +33,18 @@ function changeImage() {
 nextBtn.addEventListener('click', () => {
   index++;
   changeImage();
-})
+  resetInterval();
+});
 
 prevBtn.addEventListener('click', () => {
   index--;
   changeImage();
-})
-// END - Button Event Listeners
+  resetInterval();
+});
+// END- Button Event Listeners
 
+// Reset interval to prevent slide corruption
+function resetInterval() {
+  clearInterval(interval)
+  interval = setInterval(run, 2000);
+};
