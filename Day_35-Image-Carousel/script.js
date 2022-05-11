@@ -20,6 +20,10 @@ function changeImage() {
   // To return to the first image after the last image is displayed
   if (index > img.length - 1) {
     index = 0;
+  } 
+  // If the prev button is pressed on the first photo(index=0), it will go to the last photo.
+  else if (index < 0) {
+    index = img.length -1;
   }
   
   images.style.transform = `translateX(${-index * 480}px)`
