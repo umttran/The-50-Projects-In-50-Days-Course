@@ -21,13 +21,13 @@ body {
 }
 
 .square {
-  width: 8px;
-  height: 8px;
-  margin: 2px;
+  width: 10px;
+  height: 10px;
+  margin: .5px;
   background-color: #1d1d1d;
   box-shadow: 0 0 2px #000;
-  /* The color added to the square will disappear in 1 second: */
-  transition: 1s ease;
+  /* The color added to the square will disappear in 1.5 second: */
+  transition: 1.5s ease;
 }
 
 /* When hover on squares the color will be added immediately: */
