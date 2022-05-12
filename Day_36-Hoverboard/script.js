@@ -11,5 +11,20 @@ for(i=0; i< ALL_SQUARES; i++) {
   const square = document.createElement('div');
   square.classList.add('square');
 
+  square.addEventListener('mouseover', () => setColor(square));
+
   container.appendChild(square);
+}
+
+function setColor(square) {
+  const color = getRandomColor();
+ 
+  square.style.background = color;
+  square.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+}
+
+function getRandomColor() {
+  newColor = allColors[Math.floor(Math.random() * allColors.length)];
+
+  return newColor;
 }
