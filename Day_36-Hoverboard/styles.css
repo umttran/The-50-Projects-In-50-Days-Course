@@ -11,3 +11,26 @@ body {
   overflow: hidden;
   margin: 0;
 }
+
+.container {
+  max-width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  width: 8px;
+  height: 8px;
+  margin: 2px;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  /* The color added to the square will disappear in 1 second: */
+  transition: 1s ease;
+}
+
+/* When hover on squares the color will be added immediately: */
+.square:hover {
+  transition-duration: 0s;
+}
